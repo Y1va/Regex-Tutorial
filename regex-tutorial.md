@@ -53,6 +53,7 @@ const urlQuantifiers =
 console.log(regexQuantifiers.test(urlQuantifiers)); // Expected output: true
 ```
 
+
 ### Grouping Constructs
 
 - `(...)` : The grouping constructs are defined by parenthesis and it denotes the beginning and end of a capturing group. These allow you to extract specific information from text efficiently.
@@ -67,6 +68,7 @@ console.log('Protocol:', matchGrouping[1]); // Expected output: 'https'
 console.log('Subdomain:', matchGrouping[2]); // Expected output: 'www.'
 console.log('Top-Level Domain:', matchGrouping[3]); //Expected output: 'example.com'
 ```
+
 
 ### Bracket Expressions
 
@@ -106,21 +108,41 @@ console.log(regexCharacterClasses.test(urlCharacterClases)); // Expected output:
 
 
 ```javascript
-const regexOROperator = /^(https?|http):\/\/www.example\.com$/
-const urlOROperator = 'http://www.example.com'
+const regexOROperator = /^(https?|http):\/\/www.example\.com$/;
+const urlOROperator = 'http://www.example.com';
 console.log(regexOROperator.test(urlOROperator)) // Expected output: true
-
 ```
 
 
 ### Flags
 
+- None: There are no flags specified at the end of this regex pattern.
 
+The below code will be a demonstration of the `i` flag if it were in use.
 
+The `i` flag is the case-insensitive flag, it makes the pattern match case-insensitively. By adding the bracket expressions, it allows for it to be more flexible.
+
+```javascript
+const regexFlags = /^https:\/\/[eE][xX][aA][mM][pP][lL][eE]\.com$/i;
+const urlFlags = 'https://eXAmPle.com';
+console.log(regexFlags.test(urlFlags)); // Expected output: true
+```
 
 
 ### Character Escapes
 
+- `\d` : Represents any digit (0-9)
+- `\w` : Represents any word charachter (alphanumneric characters plus underscore)
+- `\/` : Represents a forward slash character
+- `\.` : Represents the dot character
+- `\s` : Represents anywhitespace character (space, newline, etc.)
+
+
+```javascript
+const regexCharacterEscapes = /^https?:\/\/[\da-zA-Z]+\.[\w]{2,6}$/;
+const urlCharacterEscapes = 'https://www.example.com';
+console.log(regexCharacterEscapes.test(urlCharacterEscapes)); //Expected output: true
+```
 
 
 ## Author
