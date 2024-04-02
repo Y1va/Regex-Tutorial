@@ -48,8 +48,7 @@ The below code snippet utilises the ?, +, and the \* Quantifiers, it also shows 
 
 ```javascript
 const regexQuantifiers = /^https?:\/\/([\w-]+\.)+[\w]{2,}(\/[\w-./?%&=]*)?$/;
-const urlQuantifiers =
-  'https://www.example.com/path/to/resource?param1=value1&param2=value2';
+const urlQuantifiers = 'https://www.example.com/path/to/resource?param1=value1&param2=value2';
 console.log(regexQuantifiers.test(urlQuantifiers)); // Expected output: true
 ```
 
